@@ -32,6 +32,11 @@ jobs:
         versionSpec: '5.x'
         preferLatestVersion: true
 
+    - name: Choco - Install .NET Framework 4.8 SDK
+      run: |
+        choco install dotnet-4.8-sdk -y
+        dotnet --version  # Verify installation
+
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
