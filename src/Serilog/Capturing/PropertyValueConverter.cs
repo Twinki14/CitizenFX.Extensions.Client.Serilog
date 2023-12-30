@@ -173,59 +173,61 @@ partial class PropertyValueConverter : ILogEventPropertyFactory, ILogEventProper
 
         if (value is IEnumerable enumerable)
         {
-            // Only dictionaries with 'scalar' keys are permitted, as
-            // more complex keys may not serialize to unique values for
-            // representation in sinks. This check strengthens the expectation
-            // that resulting dictionary is representable in JSON as well
-            // as richer formats (e.g. XML, .NET type-aware...).
-            // Only actual dictionaries are supported, as arbitrary types
-            // can implement multiple IDictionary interfaces and thus introduce
-            // multiple different interpretations.
             if (TryGetDictionary(value, valueType, out var dictionary))
             {
-                result = new DictionaryValue(MapToDictionaryElements(dictionary, destructuring));
+                var dictionaryElements = MapToDictionaryElements(dictionary, destructuring);
+                result = new DictionaryValue(dictionaryElements);
                 return true;
-
-                IEnumerable<KeyValuePair<ScalarValue, LogEventPropertyValue>> MapToDictionaryElements(IDictionary dictionaryEntries, Destructuring destructure)
-                {
-                    var count = 0;
-                    foreach (DictionaryEntry entry in dictionaryEntries)
-                    {
-                        if (++count > _maximumCollectionCount)
-                        {
-                            yield break;
-                        }
-
-                        var pair = new KeyValuePair<ScalarValue, LogEventPropertyValue>(
-                            (ScalarValue)_depthLimiter.CreatePropertyValue(entry.Key, destructure),
-                            _depthLimiter.CreatePropertyValue(entry.Value, destructure));
-
-                        if (pair.Key.Value != null)
-                            yield return pair;
-                    }
-                }
             }
 
-            result = new SequenceValue(MapToSequenceElements(enumerable, destructuring));
+            var sequenceElements = MapToSequenceElements(enumerable, destructuring);
+            result = new SequenceValue(sequenceElements);
             return true;
-
-            IEnumerable<LogEventPropertyValue> MapToSequenceElements(IEnumerable sequence, Destructuring destructure)
-            {
-                var count = 0;
-                foreach (var element in sequence)
-                {
-                    if (++count > _maximumCollectionCount)
-                    {
-                        yield break;
-                    }
-
-                    yield return _depthLimiter.CreatePropertyValue(element, destructure);
-                }
-            }
         }
 
         result = null;
         return false;
+    }
+
+    IEnumerable<KeyValuePair<ScalarValue, LogEventPropertyValue>> MapToDictionaryElements(IDictionary dictionaryEntries, Destructuring destructure)
+    {
+        var elements = new List<KeyValuePair<ScalarValue, LogEventPropertyValue>>();
+        var count = 0;
+
+        foreach (DictionaryEntry entry in dictionaryEntries)
+        {
+            if (++count > _maximumCollectionCount)
+            {
+                break;
+            }
+
+            var pair = new KeyValuePair<ScalarValue, LogEventPropertyValue>(
+                (ScalarValue)_depthLimiter.CreatePropertyValue(entry.Key, destructure),
+                _depthLimiter.CreatePropertyValue(entry.Value, destructure));
+
+            if (pair.Key.Value != null)
+                elements.Add(pair);
+        }
+
+        return elements;
+    }
+
+    IEnumerable<LogEventPropertyValue> MapToSequenceElements(IEnumerable sequence, Destructuring destructure)
+    {
+        var elements = new List<LogEventPropertyValue>();
+        var count = 0;
+
+        foreach (var element in sequence)
+        {
+            if (++count > _maximumCollectionCount)
+            {
+                break;
+            }
+
+            elements.Add(_depthLimiter.CreatePropertyValue(element, destructure));
+        }
+
+        return elements;
     }
 
 #if FEATURE_ITUPLE

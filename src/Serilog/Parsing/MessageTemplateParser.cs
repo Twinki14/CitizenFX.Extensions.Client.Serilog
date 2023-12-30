@@ -38,10 +38,12 @@ public class MessageTemplateParser : IMessageTemplateParser
 
     static IEnumerable<MessageTemplateToken> Tokenize(string messageTemplate)
     {
+        var result = new List<MessageTemplateToken>();
+
         if (messageTemplate.Length == 0)
         {
-            yield return new TextToken("", 0);
-            yield break;
+            result.Add(new TextToken("", 0));
+            return result;
         }
 
         var nextIndex = 0;
@@ -50,18 +52,18 @@ public class MessageTemplateParser : IMessageTemplateParser
             var beforeText = nextIndex;
             var tt = ParseTextToken(nextIndex, messageTemplate, out nextIndex);
             if (nextIndex > beforeText)
-                yield return tt;
+                result.Add(tt);
 
             if (nextIndex == messageTemplate.Length)
-                yield break;
+                return result;
 
             var beforeProp = nextIndex;
             var pt = ParsePropertyToken(nextIndex, messageTemplate, out nextIndex);
             if (beforeProp < nextIndex)
-                yield return pt;
+                result.Add(pt);
 
             if (nextIndex == messageTemplate.Length)
-                yield break;
+                return result;
         }
     }
 

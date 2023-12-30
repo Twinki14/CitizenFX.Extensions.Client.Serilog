@@ -22,6 +22,7 @@ logger.Information("Hello from the FiveM client!");
 - [#1](https://github.com/Twinki14/CitizenFX.Extensions.Client.Serilog/pull/1) - Trim files, remove assembly signing, only target net452
 - [#2](https://github.com/Twinki14/CitizenFX.Extensions.Client.Serilog/pull/2) - Add CI/CD proceeded by fix [in #4](https://github.com/Twinki14/CitizenFX.Extensions.Client.Serilog/pull/4)
 - [#3](https://github.com/Twinki14/CitizenFX.Extensions.Client.Serilog/pull/3) - Remove extra performance tests & results, this just bloated things for the purpose of this fork
+- [#5](https://github.com/Twinki14/CitizenFX.Extensions.Client.Serilog/pull/5) - Un-yield `yield return` and `yield break` uses
 
 ## Notes
 - This fork is in **NO WAY** affiliated with the [Serilog Organization](https://github.com/serilog) or the [Serilog project](https://serilog.net/), it's purely a fork to provide compatability with FiveM's client-resource shipped mono

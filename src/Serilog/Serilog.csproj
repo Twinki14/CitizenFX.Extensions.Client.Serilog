@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <Description>Simple .NET logging with fully-structured events</Description>
-    <Authors>Serilog Contributors;Twinki14</Authors>
+    <Authors>Serilog Contributors, made FiveM compatable by Twinki</Authors>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <PackageTags>serilog;logging;semantic;structured;fivem;cfx-extensions</PackageTags>
     <PackageIcon>icon.png</PackageIcon>
