@@ -6,7 +6,7 @@
     <PackageTags>serilog;logging;semantic;structured;fivem;cfx-extensions</PackageTags>
     <PackageIcon>icon.png</PackageIcon>
     <PackageId>CitizenFX.Extensions.Client.Serilog</PackageId>
-    <PackageProjectUrl>https://github.com/Twinki14/CitizenFX.Extensions.Client.Serilog/</PackageProjectUrl
+    <PackageProjectUrl>https://github.com/Twinki14/CitizenFX.Extensions.Client.Serilog/</PackageProjectUrl>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
     <TreatSpecificWarningsAsErrors />
