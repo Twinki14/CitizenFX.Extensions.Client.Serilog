@@ -1,5 +1,5 @@
 # CitizenFX.Extensions.Client.Serilog
-A fork of the [diagnostic logging library known as Serilog](https://serilog.net/), based off [v2.12.0 of Serilog](https://github.com/serilog/serilog/tree/v2.12.0) for compatability with [.NET client-side FiveM](https://fivem.net/)
+A fork of the [logging library known as Serilog](https://serilog.net/), based off [v2.12.0](https://github.com/serilog/serilog/tree/v2.12.0) for compatability with [.NET client-side FiveM](https://fivem.net/)
 
 [![Downloads](https://img.shields.io/nuget/dt/CitizenFX.Extensions.Client.Serilog?style=flat-square)](https://www.nuget.org/packages/CitizenFX.Extensions.Client.Serilog)
 [![GitHub release](https://img.shields.io/github/v/release/Twinki14/CitizenFX.Extensions.Client.Serilog?style=flat-square)](https://github.com/Twinki14/CitizenFX.Extensions.Client.Serilog/releases)
