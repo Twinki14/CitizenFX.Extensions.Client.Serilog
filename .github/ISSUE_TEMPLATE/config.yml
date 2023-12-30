@@ -4,4 +4,4 @@ contact_links:
   about: Official Serilog repository for Serilog-specific help & assistance
 - name: Visit the Serilog Wiki
   url: https://github.com/serilog/serilog/wiki
-  about: Official wiki page for Serilog, provides you with more complex examples, though there's no guarentee they work wit v2.12.0
+  about: Official wiki page for Serilog, provides you with more complex examples, though there's no guarentee they work with v2.12.0
