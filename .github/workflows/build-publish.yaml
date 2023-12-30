@@ -19,28 +19,28 @@ env:
 
 jobs:
   build:
-    runs-on: windows-2019
+    runs-on: windows-latest
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
       with:
         fetch-depth: 0
 
-    - name: Setup GitVersion
+    - name: Setup - GitVersion
       uses: gittools/actions/gitversion/setup@v0
       with:
         versionSpec: '5.x'
         preferLatestVersion: true
 
-    - name: Choco - Install .NET Framework 4.8 SDK
+    - name: Setup - .NET Framework 4.8
       run: |
         choco install dotnet-4.8-sdk -y
         dotnet --version  # Verify installation
 
-    - name: Setup .NET
+    - name: Setup - .NET 8
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: 6.x
+        dotnet-version: 8.x
         source-url: https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json
       env:
         NUGET_AUTH_TOKEN: ${{ github.token }}
