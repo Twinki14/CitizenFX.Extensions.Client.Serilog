@@ -3,13 +3,16 @@
     <Description>Simple .NET logging with fully-structured events</Description>
     <Authors>Serilog Contributors;Twinki14</Authors>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <PackageTags>serilog;logging;semantic;structured</PackageTags>
+    <PackageTags>serilog;logging;semantic;structured;fivem;cfx-extensions</PackageTags>
     <PackageIcon>icon.png</PackageIcon>
+    <PackageId>CitizenFX.Extensions.Client.Serilog</PackageId>
     <PackageProjectUrl>https://github.com/Twinki14/CitizenFX.Extensions.Client.Serilog/</PackageProjectUrl>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
     <TreatSpecificWarningsAsErrors />
     <TargetFramework>net452</TargetFramework>
+    <AssemblyName>CitizenFX.Extensions.Client.Serilog</AssemblyName>
+    <RootNamespace>Serilog</RootNamespace>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(TargetFramework)' == 'net452' ">
@@ -26,11 +29,11 @@
 
   <ItemGroup>
     <None Include="..\..\assets\icon.png" Pack="true" Visible="false" PackagePath="" />
-    <PackageReference Include="GitVersionTask" Version="5.1.2">
+    <PackageReference Include="GitVersion.MsBuild" Version="5.12.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All" />
     <PackageReference Include="Nullable" Version="1.3.1" PrivateAssets="All" />
   </ItemGroup>
 </Project>

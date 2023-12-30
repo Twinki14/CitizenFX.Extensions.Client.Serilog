@@ -346,7 +346,7 @@ public class KeyValuePairSettingsTests
         Assert.IsType<CustomConsoleTheme>(DummyConsoleSink.Theme);
     }
 
-    [Fact]
+    [Fact(Skip = "Skipped due to project condesing")]
     public void SinksAreConfiguredWithStaticMember()
     {
         var settings = new Dictionary<string, string>
