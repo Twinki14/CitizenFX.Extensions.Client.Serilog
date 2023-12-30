@@ -13,7 +13,7 @@ logger.Information("Hello from the FiveM client!");
 
 ## Changes from [v2.12.0 of Serilog](https://github.com/serilog/serilog/tree/v2.12.0)
 ### 2.12.0-cfx
-- [#1](https://github.com/Twinki14/CitizenFX.Extensions.Client.Serilog/pull/1) - Initialize CFX version
+- [#1](https://github.com/Twinki14/CitizenFX.Extensions.Client.Serilog/pull/1) - Trim files, remove assembly signing, only target net452
 
 ## Notes
 - This fork is in **NO WAY** affiliated with the [Serilog Organization](https://github.com/serilog) or the [Serilog project](https://serilog.net/), it's purely a fork to provide compatability with FiveM's client-resource shipped mono
