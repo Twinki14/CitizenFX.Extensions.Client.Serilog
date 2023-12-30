@@ -1,5 +1,5 @@
 # CitizenFX.Extensions.Client.Serilog
-A fork of the [diagnostic logging library known as Serilog](https://serilog.net/), based off [v2.12.0 of Serilog](https://github.com/serilog/serilog/tree/v2.12.0) for compatability with [.net client-side FiveM](https://fivem.net/)
+A fork of the [diagnostic logging library known as Serilog](https://serilog.net/), based off [v2.12.0 of Serilog](https://github.com/serilog/serilog/tree/v2.12.0) for compatability with [.NET client-side FiveM](https://fivem.net/)
 
 ## Example
 ```csharp
@@ -17,3 +17,4 @@ logger.Information("Hello from the FiveM client!");
 
 ## Notes
 - This fork is in **NO WAY** affiliated with the [Serilog Organization](https://github.com/serilog) or the [Serilog project](https://serilog.net/), it's purely a fork to provide compatability with FiveM's client-resource shipped mono
+- This fork **ONLY PROVIDES** support for incompatibilities with .NET client-side FiveM, if there's an incompatibility [report it here](https://github.com/Twinki14/CitizenFX.Extensions.Client.Serilog/issues/new/choose)
