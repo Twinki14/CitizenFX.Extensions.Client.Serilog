@@ -1,6 +1,6 @@
 mode: ContinuousDelivery
 branches:
-  main:
+  v2.12.0-cfx:
     mode: ContinuousDeployment
     tag: ci
     track-merge-target: true
