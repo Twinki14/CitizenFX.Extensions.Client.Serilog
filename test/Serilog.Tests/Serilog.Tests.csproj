@@ -6,7 +6,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\Serilog\Serilog.csproj" />
-    <ProjectReference Include="..\TestDummies\TestDummies.csproj" />
   </ItemGroup>
 
   <ItemGroup>
