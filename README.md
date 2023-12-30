@@ -3,7 +3,6 @@
 [![GitHub release](https://img.shields.io/github/v/release/Twinki14/CitizenFX.Extensions.Client.Serilog?style=flat-square)](https://github.com/Twinki14/CitizenFX.Extensions.Client.Serilog/releases)
 [![Nuget](https://img.shields.io/nuget/v/CitizenFX.Extensions.Client.Serilog?style=flat-square)](https://www.nuget.org/packages/CitizenFX.Extensions.Client.Serilog)
 [![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/Twinki14/CitizenFX.Extensions.Client.Serilog/build-publish.yaml?style=flat-square)](https://github.com/Twinki14/CitizenFX.Extensions.Client.Serilog/actions/workflows/build-publish.yaml)
-___
 
 A fork of the [logging library known as Serilog](https://serilog.net/), based off [v2.12.0](https://github.com/serilog/serilog/tree/v2.12.0) for compatability with [.NET client-side FiveM](https://fivem.net/)
 
