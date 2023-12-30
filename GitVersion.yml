@@ -1,0 +1,11 @@
+mode: ContinuousDelivery
+branches:
+  main:
+    regex: ^v2.12.0-cfx$
+    mode: ContinuousDeployment
+    tag: ci
+    track-merge-target: true
+ignore:
+  sha: []
+merge-message-formats: {}
+tag-prefix: "v"
