@@ -1,6 +1,6 @@
 mode: ContinuousDelivery
 branches:
-  v2.12.0-cfx:
+  main:
     regex: ^v2.12.0-cfx$
     mode: ContinuousDeployment
     tag: ci
