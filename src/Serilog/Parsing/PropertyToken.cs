@@ -19,7 +19,7 @@ namespace Serilog.Parsing;
 /// </summary>
 public sealed class PropertyToken : MessageTemplateToken
 {
-    int? _position { get; set;  }
+    int? _position { get; set; }
 
     /// <summary>
     /// Construct a <see cref="PropertyToken"/>.
