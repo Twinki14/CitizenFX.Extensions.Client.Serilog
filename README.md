@@ -9,12 +9,31 @@ A fork of the [logging library known as Serilog](https://serilog.net/), based of
 
 ## Example
 ```csharp
-var logger = new LoggerConfiguration()
-    .MinimumLevel.Information()
-    .WriteTo.FiveM()
-    .CreateLogger();
-
-logger.Information("Hello from the FiveM client!");
+public class Script : BaseScript
+{
+    public Script()
+    {
+        Log.Logger = new LoggerConfiguration()
+            .MinimumLevel.Debug()
+            .WriteTo.FiveM()
+            .CreateLogger();
+    }
+    
+    [Command("client")]
+    public void Command()
+    {
+        try
+        {
+            Log.Logger.Debug("Hello from the FiveM Client!");
+            
+            Log.Logger.Information("Player is located at {Position}", Game.Player.Character.Position.ToString());
+        }
+        catch (Exception e)
+        {
+            Log.Logger.Error(e, "Exception hit!");
+        }
+    }
+}
 ```
 
 ## Changes from [v2.12.0 of Serilog](https://github.com/serilog/serilog/tree/v2.12.0)
