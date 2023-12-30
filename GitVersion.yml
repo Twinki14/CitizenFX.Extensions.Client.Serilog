@@ -9,4 +9,4 @@ branches:
 ignore:
   sha: []
 merge-message-formats: {}
-tag-prefix: '^v(?!2\.12\.0-serilog)[\d.]+$'
+tag-prefix: 'v'
