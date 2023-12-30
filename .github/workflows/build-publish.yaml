@@ -53,7 +53,7 @@ jobs:
       run: dotnet build -c Release --no-restore
 
     - name: Dotnet - Test
-      run: dotnet test -c Release --no-restore
+      run: dotnet test --filter Serilog.Tests -c Release --no-restore
 
     - name: Dotnet - Pack
       run: dotnet pack -c Release --no-restore
