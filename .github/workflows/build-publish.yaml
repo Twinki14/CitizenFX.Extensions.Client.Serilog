@@ -34,7 +34,7 @@ jobs:
 
     - name: Setup - .NET Framework 4.8
       run: |
-        choco install dotnet-4.8-sdk -y
+        choco install netfx-4.8-devpack -y
         dotnet --version  # Verify installation
 
     - name: Setup - .NET 8
