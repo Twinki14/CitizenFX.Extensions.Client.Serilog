@@ -19,28 +19,32 @@ static class GetablePropertyFinder
     internal static IEnumerable<PropertyInfo> GetPropertiesRecursive(this Type type)
     {
         var seenNames = new HashSet<string>();
+        var result = new List<PropertyInfo>();
 
         var currentTypeInfo = type.GetTypeInfo();
 
         while (currentTypeInfo.AsType() != typeof(object))
         {
-            var unseenProperties = currentTypeInfo.DeclaredProperties.Where(p => p.CanRead &&
-                                                                                 p.GetMethod!.IsPublic && !p.GetMethod.IsStatic &&
-                                                                                 (p.Name != "Item" || p.GetIndexParameters().Length == 0) && !seenNames.Contains(p.Name));
+            var unseenProperties = currentTypeInfo.DeclaredProperties
+                .Where(p => p.CanRead &&
+                            p.GetMethod!.IsPublic && !p.GetMethod.IsStatic &&
+                            (p.Name != "Item" || p.GetIndexParameters().Length == 0) && !seenNames.Contains(p.Name));
 
             foreach (var propertyInfo in unseenProperties)
             {
                 seenNames.Add(propertyInfo.Name);
-                yield return propertyInfo;
+                result.Add(propertyInfo);
             }
 
             var baseType = currentTypeInfo.BaseType;
             if (baseType == null)
             {
-                yield break;
+                return result;
             }
 
             currentTypeInfo = baseType.GetTypeInfo();
         }
+
+        return result;
     }
 }
