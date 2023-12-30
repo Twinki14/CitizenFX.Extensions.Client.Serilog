@@ -12,7 +12,7 @@ logger.Information("Hello from the FiveM client!");
 ```
 
 ## Changes from [v2.12.0 of Serilog](https://github.com/serilog/serilog/tree/v2.12.0)
-### 2.12.0-cfx
+### v2.12.0-cfx
 - [#1](https://github.com/Twinki14/CitizenFX.Extensions.Client.Serilog/pull/1) - Trim files, remove assembly signing, only target net452
 
 ## Notes
